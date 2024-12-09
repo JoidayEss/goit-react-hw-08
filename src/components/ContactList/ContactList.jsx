@@ -4,23 +4,30 @@ import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 const ContactList = () => {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectFilteredContacts);
-  console.log("Filtered Contacts:", filteredContacts);
 
   const handleDelete = (contactId) => {
     dispatch(deleteContact(contactId));
+    toast.error("Contacts deleted!", {
+      duration: 2000,
+      position: "top-center",
+      style: {
+        backgroundColor: "#f8f8f8",
+        color: "red",
+      },
+    });
   };
 
   useEffect(() => {
-    console.log("Fetching contacts...");
     dispatch(fetchContacts());
   }, [dispatch]);
 
   if (filteredContacts.length === 0) {
-    return <p className={s.error}>No contacts found</p>;
+    return <p className={s.error}>No contacts found. Add your contacts 💻️</p>;
   }
 
   return (

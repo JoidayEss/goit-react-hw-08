@@ -3,6 +3,7 @@ import s from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import * as Yup from "yup";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,14 @@ const ContactForm = () => {
       number: values.number,
     };
     dispatch(addContact(newContact));
+    toast.success("Contact added successfully", {
+      duration: 2000,
+      position: "top-center",
+      style: {
+        backgroundColor: "#f8f8f8",
+        color: "green",
+      },
+    });
     resetForm();
   };
 
@@ -50,6 +59,9 @@ const ContactForm = () => {
         <button className={s.button} type="submit">
           Add contact
         </button>
+        <div>
+          <Toaster />
+        </div>
       </Form>
     </Formik>
   );

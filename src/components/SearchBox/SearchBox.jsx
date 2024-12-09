@@ -8,10 +8,9 @@ const SearchBox = () => {
   const filter = useSelector(selectNameFilter);
 
   const handleChange = (e) => {
-    const filterValue = e.target.value;
-    console.log("Filter value:", filterValue);
+    const query = e.target.value;
 
-    dispatch(changeFilter(filterValue));
+    dispatch(changeFilter(query));
   };
   return (
     <>
@@ -21,7 +20,7 @@ const SearchBox = () => {
           className={s.input}
           type="text"
           onChange={handleChange}
-          value={filter}
+          value={filter || ""}
         />
       </div>
     </>

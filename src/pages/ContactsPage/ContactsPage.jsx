@@ -3,6 +3,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
 import { useSelector } from "react-redux";
+import Loader from "../../components/Loader/Loader";
 
 const ContactsPage = () => {
   const loader = useSelector(isLoading);
@@ -12,7 +13,7 @@ const ContactsPage = () => {
       <ContactForm />
       <SearchBox />
       <ContactList />
-      <div>{loader && "Request in progress...."}</div>
+      <div>{loader && <Loader />}</div>
     </div>
   );
 };
