@@ -1,0 +1,26 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightblue;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 310px;
+}
+
+.search_p {
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+}

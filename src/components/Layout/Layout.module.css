@@ -1,0 +1,7 @@
+.header {
+    background-color: aquamarine;
+    padding: 20px;
+    border-radius: 8px;
+    width: 1200px;
+    justify-content: space-between;
+}
