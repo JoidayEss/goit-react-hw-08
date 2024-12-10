@@ -11,7 +11,6 @@ const slice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    items: [],
   },
   extraReducers: (builder) => {
     builder
